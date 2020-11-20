@@ -1,0 +1,16 @@
+/*if (!Pattern.matches(regular_expression,matched))
+        {
+            yearerror.setText("Girilecek numara 4 karakterli ve sadece sayılardan olmalı");
+        }
+        else 
+        {
+            regular_expression="(18(\\d)(\\d))|(19(\\d)(\\d))|"+curryear.toString();
+            if (!Pattern.matches(regular_expression,year))
+            {
+                yearerror.setText("1800 ila "+curryear.toString()+" arasında bir yıl giriniz");
+            }
+            else {
+                numyear=Integer.parseInt(year);
+                yearcorrect=true;
+            }
+        }*/
