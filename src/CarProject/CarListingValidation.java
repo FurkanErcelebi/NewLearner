@@ -47,7 +47,7 @@ public class CarListingValidation {
         panel.setBackground(Color.LIGHT_GRAY);
         panel.setLayout(null);
 
-        if (!cars.getCarArrayList().isEmpty()) {
+//        if (!cars.getCarArrayList().isEmpty()) {
             pricelable1 = new JLabel("En küçük(nokta ile ifade ediniz,ör:2435.0) :");
             pricelable1.setBounds(20, 20, 250, 20);
             pricetext1 = new TextField("");
@@ -72,7 +72,7 @@ public class CarListingValidation {
             panel.add(pricetext2);
             panel.add(priceerror2);
             panel.add(button);
-        }
+//        }
         return panel;
     }
 

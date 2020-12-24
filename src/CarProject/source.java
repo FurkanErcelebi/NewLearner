@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.io.File;
 import java.util.regex.*;
 
 
@@ -20,7 +21,7 @@ public class source implements ActionListener {
     CarListingValidation listingcar = new CarListingValidation();
 
     source() {
-        String path = "C:\\Users\\ifurk\\OneDrive\\Desktop\\";
+        String path = System.getProperty("user.home")+ File.separator+"Downloads"+File.separator;
         ControlFiles files = new ControlFiles(path, "car.txt");
 
         try {
@@ -122,13 +123,13 @@ public class source implements ActionListener {
 
     public static void main(String[] args) {
 
-        //new source();
-        String regular_expression = "^(.*)@gmail\\.com$"; //"[0-9a-f]{8}(-)[0-9a-f]{4}(-)[0-9a-f]{4}(-)[0-9a-f]{4}(-)[0-9a-f]{12}";
+        new source();
+        /*String regular_expression = "^(.*)@gmail\\.com$"; //"[0-9a-f]{8}(-)[0-9a-f]{4}(-)[0-9a-f]{4}(-)[0-9a-f]{4}(-)[0-9a-f]{12}";
         String matched ="ifurkan480@gmail.com"; //"c7f87bf4-fa81-11ea-b0ec-482ad3841cf6";
         System.out.println("Is "
                 + matched + " actual expression of '"
                 + regular_expression + "'? : "
-                + Pattern.matches(regular_expression, matched));
+                + Pattern.matches(regular_expression, matched));*/
 
     }
 

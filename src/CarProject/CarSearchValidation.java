@@ -46,7 +46,7 @@ public class CarSearchValidation {
         panel.setBackground(Color.LIGHT_GRAY);
         panel.setLayout(null);
 
-        if (!cars.getCarArrayList().isEmpty()) {
+//        if (!cars.getCarArrayList().isEmpty()) {
             VINsearchlable = new JLabel("VIN(5 karakter giriniz,A-Z veye 0-9 karakterler bulunmalı) :");
             VINsearchlable.setBounds(20, 20, 340, 20);
             VINsearchtext = new TextField("");
@@ -61,7 +61,7 @@ public class CarSearchValidation {
             panel.add(VINsearchtext);
             panel.add(VINsearcherror);
             panel.add(button);
-        }
+//        }
         return panel;
     }
 

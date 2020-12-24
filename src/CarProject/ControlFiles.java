@@ -29,6 +29,9 @@ public class ControlFiles {
     public void ReadCarFile(CarArrayList cars) throws IOException {
         StringBuilder element = new StringBuilder();
         FileReader fr = new FileReader(getPath() + getFile());
+        if(fr == null){
+            throw new IOException("File not found:"+getPath() + getFile());
+        }
         String VIN = "", make = "", model;
         int i = 1, c, index = 0, a, j, space[] = new int[3], k, year, mileage, reuslt;
         double price;

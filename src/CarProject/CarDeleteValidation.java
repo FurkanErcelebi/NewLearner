@@ -45,7 +45,7 @@ public class CarDeleteValidation {
         panel.setBackground(Color.LIGHT_GRAY);
         panel.setLayout(null);
 
-        if (!cars.getCarArrayList().isEmpty()) {
+//        if (!cars.getCarArrayList().isEmpty()) {
             nolable = new JLabel("NO:");
             nolable.setBounds(60, 20, 40, 20);
             notext = new TextField("");
@@ -60,7 +60,7 @@ public class CarDeleteValidation {
             panel.add(notext);
             panel.add(noerror);
             panel.add(button);
-        }
+//        }
         return panel;
 
     }
