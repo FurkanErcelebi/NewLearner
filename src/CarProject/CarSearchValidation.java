@@ -81,6 +81,7 @@ public class CarSearchValidation {
             } else VINcorrect = true;
         }
         if (VINcorrect) {
+            correct = true;
             setResult(VIN);
             VINsearchtext.setText("");
             VINsearcherror.setText("");
