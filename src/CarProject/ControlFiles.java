@@ -1,10 +1,7 @@
 package CarProject;
 
 import javax.swing.*;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 import java.io.FileReader;
 import java.util.Arrays;
@@ -29,6 +26,12 @@ public class ControlFiles {
     public void ReadCarFile(CarArrayList cars) throws IOException {
         StringBuilder element = new StringBuilder();
         FileReader fr = new FileReader(getPath() + getFile());
+        if(fr == null)
+        {
+            File newfile = new File(getPath() + getFile());
+            newfile.createNewFile();
+            fr = new FileReader(getPath() + getFile());
+        }
         String VIN = "", make = "", model;
         int i = 1, c, index = 0, a, j, space[] = new int[3], k, year, mileage, reuslt;
         double price;

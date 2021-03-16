@@ -45,22 +45,21 @@ public class CarDeleteValidation {
         panel.setBackground(Color.LIGHT_GRAY);
         panel.setLayout(null);
 
-        if (!cars.getCarArrayList().isEmpty()) {
-            nolable = new JLabel("NO:");
-            nolable.setBounds(60, 20, 40, 20);
-            notext = new TextField("");
-            notext.setBounds(100, 20, 40, 20);
-            noerror = new JLabel("");
-            noerror.setBounds(50, 40, 400, 20);
-            noerror.setForeground(Color.red);
-            button = new JButton("Sil");
-            button.setBounds(100, 60, 80, 30);
-            setButton(button);
-            panel.add(nolable);
-            panel.add(notext);
-            panel.add(noerror);
-            panel.add(button);
-        }
+        nolable = new JLabel("NO:");
+        nolable.setBounds(60, 20, 40, 20);
+        notext = new TextField("");
+        notext.setBounds(100, 20, 40, 20);
+        noerror = new JLabel("");
+        noerror.setBounds(50, 40, 400, 20);
+        noerror.setForeground(Color.red);
+        button = new JButton("Sil");
+        button.setBounds(100, 60, 80, 30);
+        setButton(button);
+        panel.add(nolable);
+        panel.add(notext);
+        panel.add(noerror);
+        panel.add(button);
+
         return panel;
 
     }

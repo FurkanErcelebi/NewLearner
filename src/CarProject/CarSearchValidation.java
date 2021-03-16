@@ -46,22 +46,22 @@ public class CarSearchValidation {
         panel.setBackground(Color.LIGHT_GRAY);
         panel.setLayout(null);
 
-        if (!cars.getCarArrayList().isEmpty()) {
-            VINsearchlable = new JLabel("VIN(5 karakter giriniz,A-Z veye 0-9 karakterler bulunmalı) :");
-            VINsearchlable.setBounds(20, 20, 340, 20);
-            VINsearchtext = new TextField("");
-            VINsearchtext.setBounds(390, 20, 80, 20);
-            VINsearcherror = new JLabel();
-            VINsearcherror.setForeground(Color.red);
-            VINsearcherror.setBounds(20, 40, 370, 20);
-            button = new JButton("Ara");
-            button.setBounds(100, 70, 80, 30);
-            setButton(button);
-            panel.add(VINsearchlable);
-            panel.add(VINsearchtext);
-            panel.add(VINsearcherror);
-            panel.add(button);
-        }
+
+        VINsearchlable = new JLabel("VIN(5 karakter giriniz,A-Z veye 0-9 karakterler bulunmalı) :");
+        VINsearchlable.setBounds(20, 20, 340, 20);
+        VINsearchtext = new TextField("");
+        VINsearchtext.setBounds(390, 20, 80, 20);
+        VINsearcherror = new JLabel();
+        VINsearcherror.setForeground(Color.red);
+        VINsearcherror.setBounds(20, 40, 370, 20);
+        button = new JButton("Ara");
+        button.setBounds(100, 70, 80, 30);
+        setButton(button);
+        panel.add(VINsearchlable);
+        panel.add(VINsearchtext);
+        panel.add(VINsearcherror);
+        panel.add(button);
+
         return panel;
     }
 

@@ -47,32 +47,31 @@ public class CarListingValidation {
         panel.setBackground(Color.LIGHT_GRAY);
         panel.setLayout(null);
 
-        if (!cars.getCarArrayList().isEmpty()) {
-            pricelable1 = new JLabel("En küçük(nokta ile ifade ediniz,ör:2435.0) :");
-            pricelable1.setBounds(20, 20, 250, 20);
-            pricetext1 = new TextField("");
-            pricetext1.setBounds(270, 20, 80, 20);
-            priceerror1 = new JLabel();
-            priceerror1.setForeground(Color.red);
-            priceerror1.setBounds(20, 40, 370, 60);
-            panel.add(pricelable1);
-            panel.add(pricetext1);
-            panel.add(priceerror1);
-            pricelable2 = new JLabel("En büyük(nokta ile ifade ediniz,ör:2435.0) :");
-            pricelable2.setBounds(20, 100, 255, 20);
-            pricetext2 = new TextField("");
-            pricetext2.setBounds(275, 100, 80, 20);
-            priceerror2 = new JLabel();
-            priceerror2.setForeground(Color.red);
-            priceerror2.setBounds(20, 120, 370, 60);
-            button = new JButton("Ara");
-            button.setBounds(100, 190, 80, 30);
-            setButton(button);
-            panel.add(pricelable2);
-            panel.add(pricetext2);
-            panel.add(priceerror2);
-            panel.add(button);
-        }
+        pricelable1 = new JLabel("En küçük(nokta ile ifade ediniz,ör:2435.0) :");
+        pricelable1.setBounds(20, 20, 250, 20);
+        pricetext1 = new TextField("");
+        pricetext1.setBounds(270, 20, 80, 20);
+        priceerror1 = new JLabel();
+        priceerror1.setForeground(Color.red);
+        priceerror1.setBounds(20, 40, 370, 60);
+        panel.add(pricelable1);
+        panel.add(pricetext1);
+        panel.add(priceerror1);
+        pricelable2 = new JLabel("En büyük(nokta ile ifade ediniz,ör:2435.0) :");
+        pricelable2.setBounds(20, 100, 255, 20);
+        pricetext2 = new TextField("");
+        pricetext2.setBounds(275, 100, 80, 20);
+        priceerror2 = new JLabel();
+        priceerror2.setForeground(Color.red);
+        priceerror2.setBounds(20, 120, 370, 60);
+        button = new JButton("Ara");
+        button.setBounds(100, 190, 80, 30);
+        setButton(button);
+        panel.add(pricelable2);
+        panel.add(pricetext2);
+        panel.add(priceerror2);
+        panel.add(button);
+
         return panel;
     }
 

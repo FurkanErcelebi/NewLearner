@@ -123,7 +123,7 @@ public class CarAddValidation {
         String VIN = "", make = "", model = "", newmake = "", newmodel = "", year = "", mileage = "", price = "", regular_expression, matched;
         boolean VINcorrect, makecorrect, modelcorrect, yearcorrect, mileagecorrect, pricecorrect;
         Scanner input = new Scanner(System.in);
-        int i, numyear = 0, nummileage = 0, dot = 0, number, character, deci, one;
+        int i, numyear = 0, nummileage = 0, dot = 0, number, character, deci,deci1, one,one1,hund;
         double numprice = 0.0;
         VIN = VINtext.getText();
         VINerror.setText("");
@@ -165,9 +165,18 @@ public class CarAddValidation {
             yearerror.setText("Girilecek numara 4 karakterli ve sadece sayılardan olmalı");
         } else {
             one = Integer.parseInt(curryear.toString()) % 10;
+            one1 = Integer.parseInt(year.toString()) % 10;
             deci = (Integer.parseInt(curryear.toString()) % 100 - one) / 10;
-            regular_expression = "(18(\\d)(\\d))|(19(\\d)(\\d))|20[0-" + Integer.toString(deci) + "][0-" + Integer.toString(one) + "]";
-            if (!Pattern.matches(regular_expression, year)) {
+            deci1 =  (Integer.parseInt(year.toString()) % 100 - one1) / 10;
+            hund = (Integer.parseInt(year.toString()) % 1000 - deci1) / 10;
+            regular_expression = "(18(\\d)(\\d))|(19(\\d)(\\d))|(20[0-" + Integer.toString(deci) + "][\\d])";
+            if(hund == 2) {
+                deci *= 10;
+                deci1 *= 10;
+                deci += one;
+                deci1 += one1;
+            }
+            if (!Pattern.matches(regular_expression, year ) || deci < deci1) {
                 yearerror.setText("1800 ile " + curryear.toString() + " arasında bir yıl giriniz");
             } else {
                 numyear = Integer.parseInt(year);

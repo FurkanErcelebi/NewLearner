@@ -5,10 +5,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
-import java.util.regex.*;
+import java.io.File;
+import java.io.IOException;
 
 
-public class source implements ActionListener {
+public class Source implements ActionListener {
     JPanel table, alttable, addertitle, adderpanel, delltitle, dellpanel, searchtitle, searchpanel, listingtitle, listingpanel;
     JButton adderbutton, dellbutton, searchbutton, listingbutton;
     JMenuItem add, dell, view, search, listing;
@@ -19,8 +20,9 @@ public class source implements ActionListener {
     CarSearchValidation searching = new CarSearchValidation();
     CarListingValidation listingcar = new CarListingValidation();
 
-    source() {
-        String path = "C:\\Users\\ifurk\\OneDrive\\Desktop\\";
+    Source() {
+        String HomeDir = System.getProperty("user.home");
+        String path = HomeDir+File.separator+"Desktop"+File.separator;
         ControlFiles files = new ControlFiles(path, "car.txt");
 
         try {
@@ -55,7 +57,7 @@ public class source implements ActionListener {
         menubar.add(select);
         table = cars.ShowCars();
         alttable = new JPanel();
-        if (1 == cars.getI()) JOptionPane.showMessageDialog(app, "Kayıtlar boş", "Dikkat", JOptionPane.WARNING_MESSAGE);
+        //if (1 == cars.getI()) JOptionPane.showMessageDialog(app, "Kayıtlar boş", "Dikkat", JOptionPane.WARNING_MESSAGE);
         addertitle = adding.Header("Girlecek kayıt için arabanın sırasıyla VIN,marka,model,üretim yılı,kilometre performansı ve fiyatını giriniz");
         adderpanel = adding.CarAttributesValidation();
         app.add(addertitle);
@@ -120,15 +122,9 @@ public class source implements ActionListener {
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        //new source();
-        String regular_expression = "^(.*)@gmail\\.com$"; //"[0-9a-f]{8}(-)[0-9a-f]{4}(-)[0-9a-f]{4}(-)[0-9a-f]{4}(-)[0-9a-f]{12}";
-        String matched ="ifurkan480@gmail.com"; //"c7f87bf4-fa81-11ea-b0ec-482ad3841cf6";
-        System.out.println("Is "
-                + matched + " actual expression of '"
-                + regular_expression + "'? : "
-                + Pattern.matches(regular_expression, matched));
+        new Source();
 
     }
 
@@ -177,23 +173,34 @@ public class source implements ActionListener {
             EnableandVisible(1);
         }
         if (e.getSource() == dell) {
-            if (cars.getCarArrayList().isEmpty()) delltitle = deleting.Header("Silmek için kayıt yoktur");
-            else delltitle = deleting.Header("Silinecek kaydın sıra numarasını giriniz");
-            app.add(delltitle);
-            EnableandVisible(2);
+            if (cars.getCarArrayList().isEmpty()) {
+                JOptionPane.showMessageDialog(app, "Silmek için kayıt bulunmamaktadır", "Dikkat", JOptionPane.WARNING_MESSAGE);
+            }
+            else {
+                delltitle = deleting.Header("Silinecek kaydın sıra numarasını giriniz");
+                app.add(delltitle);
+                EnableandVisible(2);
+            };
         }
         if (e.getSource() == search) {
-            if (cars.getCarArrayList().isEmpty()) searchtitle = searching.Header("Aramak için kayıt yoktur");
-            else searchtitle = searching.Header("Aranacak Kayıt için VIN numarasını giriniz");
-            app.add(searchtitle);
-            EnableandVisible(3);
+            if (cars.getCarArrayList().isEmpty()) {
+                JOptionPane.showMessageDialog(app, "Aramak için kayıt bulunmamaktadır", "Dikkat", JOptionPane.WARNING_MESSAGE);
+            }
+            else {
+                searchtitle = searching.Header("Aranacak Kayıt için VIN numarasını giriniz");
+                app.add(searchtitle);
+                EnableandVisible(3);
+            };
         }
         if (e.getSource() == listing) {
-            if (cars.getCarArrayList().isEmpty()) listingtitle = listingcar.Header("Listelemek için kayıt yoktur");
-            else
+            if (cars.getCarArrayList().isEmpty()) {
+                JOptionPane.showMessageDialog(app, "Listelemek için kayıt bulunmamaktadır", "Dikkat", JOptionPane.WARNING_MESSAGE);
+            }
+            else {
                 listingtitle = listingcar.Header("Aradığınız fiyattaki arabaları bulmak için enbüyük ve en küçük fiyat aralığını giriniz");
-            app.add(listingtitle);
-            EnableandVisible(4);
+                app.add(listingtitle);
+                EnableandVisible(4);
+            }
         }
         if (e.getSource() == adderbutton) {
             app.remove(table);
