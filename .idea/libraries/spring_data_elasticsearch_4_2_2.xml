@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="spring-data-elasticsearch-4.2.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Documents/Openshift/spring-data-elasticsearch-4.2.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
