@@ -1,18 +1,14 @@
 package JSONExample;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import JSONExample.Name;
-import JSONExample.Student;
 
 public class JacksonTester {
     public static void main(String args[]){
         ObjectMapper mapper = new ObjectMapper();
         try {
-            ArrayList<Name> names = null;
-            Student student = new Student(1,3,"systemId1",names);
+            StudentOne student = new StudentOne(1, "systemId1");
 
             String jsonString = mapper
                     .writerWithDefaultPrettyPrinter()
